@@ -13,7 +13,7 @@ Improvements and updates include the following:
 
 # Download the Game
 A Windows version of the game can be downloaded using the following link:
-[Download main.exe](https://1drv.ms/u/c/0bd01f296bdf94e4/EU9Rw7ql7O5DueZCwkxQqTMBWXhSdyReWD9rs64mRTfCsw?e=jGao53)
+[Download main.exe]([https://1drv.ms/u/c/0bd01f296bdf94e4/Edjo6mavp99EjTRRBFu1skEBGaK3VLD35X1RRaJnPZZTEg?e=saWzIS])
 
 * File size is 169.325 MB for the entire folder; 169.234 MB for main.exe
 
@@ -22,3 +22,4 @@ The following applications were implemented:
 * Python 3.11
 * Pygame
 * Librosa
+
