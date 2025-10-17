@@ -129,8 +129,7 @@ def main_menu():
     controls_lines = [
         "While the music plays and the blocks fall,",
         "hit the button for the corresponding lane to get a hit.",
-        "The leftmost keys are controlled by 1, 2, and 3 on the upper keypad.",
-        "The rightmost keys are controlled by 1, 2, and 3 on the right keypad.",
+        "From left to right, the keys are: 1, 2, 3, 8, 9, and 0.",
         "Try to get a high score!"
     ]
     # --- pre-render controls surfaces ---
@@ -358,8 +357,8 @@ def game_loop(file_name, beatmap, ending_time):
     score = 0
     multiplier = 1
 
-    keypress1 = keypress2 = keypress3 = False
     keypressone = keypresstwo = keypressthree = False
+    keypresseight = keypressnine = keypresszero = False
 
     # --- Sprite groups for each lane ---
     notesA = pygame.sprite.Group()
@@ -429,31 +428,31 @@ def game_loop(file_name, beatmap, ending_time):
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_1: 
-                        keypress1 = True
-                        
-                    elif event.key == pygame.K_2:
-                        keypress2 = True
-                        
-                    elif event.key == pygame.K_3:
-                        keypress3 = True
-                        
-                    elif event.key == pygame.K_KP1:
                         keypressone = True
                         
-                    elif event.key == pygame.K_KP2:
+                    elif event.key == pygame.K_2:
                         keypresstwo = True
                         
-                    elif event.key == pygame.K_KP3:
+                    elif event.key == pygame.K_3:
                         keypressthree = True
+                        
+                    elif event.key == pygame.K_8:
+                        keypresseight = True
+                        
+                    elif event.key == pygame.K_9:
+                        keypressnine = True
+                        
+                    elif event.key == pygame.K_0:
+                        keypresszero = True
                         
 
                 if event.type == pygame.KEYUP:
-                    if event.key == pygame.K_1: keypress1 = False
-                    if event.key == pygame.K_2: keypress2 = False
-                    if event.key == pygame.K_3: keypress3 = False
-                    if event.key == pygame.K_KP1: keypressone = False
-                    if event.key == pygame.K_KP2: keypresstwo = False
-                    if event.key == pygame.K_KP3: keypressthree = False
+                    if event.key == pygame.K_1: keypressone = False
+                    if event.key == pygame.K_2: keypresstwo = False
+                    if event.key == pygame.K_3: keypressthree = False
+                    if event.key == pygame.K_8: keypresseight = False
+                    if event.key == pygame.K_9: keypressnine = False
+                    if event.key == pygame.K_0: keypresszero = False
 
             # --- timing --- 
             current += clock.get_time()
@@ -485,12 +484,12 @@ def game_loop(file_name, beatmap, ending_time):
             multiplier_count(multiplier)
             score_count(score)
 
-            if keypress1: screen.blit(pressed, (position_a, 494))
-            if keypress2: screen.blit(pressed, (position_b, 494))
-            if keypress3: screen.blit(pressed, (position_c, 494))
-            if keypressone: screen.blit(pressed, (position_d, 494))
-            if keypresstwo: screen.blit(pressed, (position_e, 494))
-            if keypressthree: screen.blit(pressed, (position_f, 494))
+            if keypressone: screen.blit(pressed, (position_a, 494))
+            if keypresstwo: screen.blit(pressed, (position_b, 494))
+            if keypressthree: screen.blit(pressed, (position_c, 494))
+            if keypresseight: screen.blit(pressed, (position_d, 494))
+            if keypressnine: screen.blit(pressed, (position_e, 494))
+            if keypresszero: screen.blit(pressed, (position_f, 494))
 
             # --- Draw notes ---
             for group in (notesA, notesB, notesC, notesD, notesE, notesF):
@@ -513,12 +512,12 @@ def game_loop(file_name, beatmap, ending_time):
             notesF.update(mostaccurate)
 
             lane_keys = [
-                (keypress1, notesA),
-                (keypress2, notesB),
-                (keypress3, notesC),
-                (keypressone, notesD),
-                (keypresstwo, notesE),
-                (keypressthree, notesF),
+                (keypressone, notesA),
+                (keypresstwo, notesB),
+                (keypressthree, notesC),
+                (keypresseight, notesD),
+                (keypressnine, notesE),
+                (keypresszero, notesF),
             ]
 
             for key_pressed, group in lane_keys:
@@ -557,5 +556,8 @@ if __name__ == '__main__':
         input("Press Enter to exit...")
        
                
+
+
+
 
 
