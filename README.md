@@ -10,18 +10,20 @@ Improvements and updates include the following:
 * A menu where users can select from one of ten songs to play
 * Notes timed to better match the individual beats of each song at the trade-off of removing the game's difficulty options
 
+A short video containing a playthrough of the first song can be found here: ([https://1drv.ms/u/c/0bd01f296bdf94e4/EZT68CICBoRMmDWSc47W2gMB9d26OinC19FPUWtgqu-TEA?e=OqmX9r])
 
 # Download the Game
 A Windows version of the game can be downloaded using the following link:
 [Download main.exe]([https://1drv.ms/u/c/0bd01f296bdf94e4/EZT68CICBoRMmDWSc47W2gMB9d26OinC19FPUWtgqu-TEA?e=OqmX9r])
 
-* File size is about 190 MB for the entire ZIP folder
+* File size is about 305 MB for main.exe
 
 
 The following applications were implemented:
 * Python 3.11
 * Pygame
 * Librosa
+
 
 
 
